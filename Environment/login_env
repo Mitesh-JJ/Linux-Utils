@@ -1,0 +1,10 @@
+# Early exit for non-interactive shells
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# [NOTE] Common shell configs
+if [ -f $HOME/.common_env ]; then
+    source $HOME/.common_env
+fi

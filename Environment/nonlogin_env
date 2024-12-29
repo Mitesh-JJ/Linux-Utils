@@ -1,0 +1,18 @@
+# Early exit for non-interactive shells
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Common shell configs
+if [ -f $HOME/.common_env ]; then
+    source $HOME/.common_env
+fi
+
+# User bin dir.
+if [ -d $HOME/.local/bin ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
+# Surface size updates
+shopt -s checkwinsize
