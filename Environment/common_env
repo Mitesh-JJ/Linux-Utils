@@ -2,12 +2,6 @@
 alias ls='ls --color=auto -1'
 alias cls='clear'
 
-# XBPS Aliases
-# alias xqur='xbps-query'
-# alias xrem='xbps-remove'
-# alias xins='xbps-install'
-# alias note='gnome-text-editor'
-
 # [Hack] hack to enable sudo 'alias'
 alias sudo='sudo '
 
@@ -22,3 +16,13 @@ HISTSIZE=500
 
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# User bin dir.
+if [ -d $HOME/.local/bin ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
+# User miniconda dir.
+if [ -d $HOME/.local/miniconda3/bin ]; then
+    export PATH="$PATH:$HOME/.local/miniconda3/bin"
+fi
